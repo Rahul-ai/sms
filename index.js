@@ -6,8 +6,9 @@ const app = express();
 require('dotenv').config();
 
 let mailList = [
-  {email:'rahul123@gmail.com'},
-  {email:'shood123@gmail.com'}
+  {email:'lara123@gmail.com'},
+  {email:'sola321@gmail.com'},
+  {email:'gmail321@gmail.com'}
 ]
 
 let mailTrans = nodemailer.createTransport({
