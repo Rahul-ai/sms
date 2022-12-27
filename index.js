@@ -37,8 +37,9 @@ cron.schedule("*/5 * * * * *", () => {
   var dateTime = hours + ":" + minutes + ":" + seconds;
 
   mailList.forEach((mail) => {
-    // console.log((mail.day == 2 && mail.mail == 0 && hoursampm == '12pm') || (mail.day == 5 && mail.mail == 1 && hoursampm == '9am') || (mail.day == 7 && mail.mail == 2 && hoursampm == '9am'))
-    if ((mail.day == 2 && mail.mail == 0 && hoursampm == '12pm') || (mail.day == 5 && mail.mail == 1 && hoursampm == '9am') || (mail.day == 7 && mail.mail == 2 && hoursampm == '9am')) {
+    if ((mail.day == 2 && mail.mail == 0 && hoursampm == '12pm') || 
+    (mail.day == 5 && mail.mail == 1 && hoursampm == '9am') || 
+    (mail.day == 7 && mail.mail == 2 && hoursampm == '9am')) {
       var mailOptions = {
         from: "priscilla12@ethereal.email",
         to: mail.email,
@@ -78,8 +79,6 @@ cron.schedule("*/5 * * * * *", () => {
     //     text: 'Hi today is &lt;date&gt; And &lt;time&gt'
     //   };
     // }
-
-
   })
 })
 
