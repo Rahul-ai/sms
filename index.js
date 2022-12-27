@@ -53,7 +53,7 @@ cron.schedule("*/5 * * * * *", () => {
           console.log('Email sent: ' + info.response);
         }
       })
-      mail.mail = + 1;
+      mail.mail = mail.mail + 1;
     }
 
     if (mail.date < date) {
