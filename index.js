@@ -8,7 +8,7 @@ require('dotenv').config();
 let mailList = [
   { email: 'lara123@gmail.com', day: 1, mail: 0, date: "2022-12-26" },
   { email: 'sola321@gmail.com', day: 2, mail: 1, date: "2022-12-27" },
-  { email: 'gmail321@gmail.com', day: 3, mail: 2, date: "2022-12-27"},
+  { email: 'gmail321@gmail.com', day: 3, mail: 1, date: "2022-12-27"},
 ]
 
 let mailTrans = nodemailer.createTransport({
