@@ -15,8 +15,8 @@ let mailTrans = nodemailer.createTransport({
   host: 'smtp.ethereal.email',
   port: 587,
   auth: {
-    user: 'priscilla12@ethereal.email',
-    pass: '3QVg7fRNej7V8paDhP'
+    user: process.env.user,
+    pass: process.env.password
   }
 });
 
@@ -41,9 +41,9 @@ cron.schedule("*/5 * * * * *", () => {
     (mail.day == 5 && mail.mail == 1 && hoursampm == '9am') || 
     (mail.day == 7 && mail.mail == 2 && hoursampm == '9am')) {
       var mailOptions = {
-        from: "priscilla12@ethereal.email",
+        from: process.env.user,
         to: mail.email,
-        subject: 'Sending Email using Node.js',
+        subject: 'Reminder',
         text: `Hi today is ${date} And ${dateTime}`
       };
       mailTrans.sendMail(mailOptions, (error, info) => {
