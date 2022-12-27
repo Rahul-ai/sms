@@ -7,7 +7,7 @@ require('dotenv').config();
 
 let mailList = [
   { email: 'lara123@gmail.com', day: 1, mail: 0, date: "2022-12-26" },
-  { email: 'sola321@gmail.com', day: 2, mail: 1, date: "2022-12-27" },
+  { email: 'sola321@gmail.com', day: 2, mail: 0, date: "2022-12-27" },
   { email: 'gmail321@gmail.com', day: 3, mail: 1, date: "2022-12-27"},
 ];
 
@@ -15,8 +15,8 @@ let mailTrans = nodemailer.createTransport({
   host: 'smtp.ethereal.email',
   port: 587,
   auth: {
-    user: process.env.user,
-    pass: process.env.password
+    user: "priscilla12@ethereal.email",
+    pass: "3QVg7fRNej7V8paDhP"
   }
 });
 
@@ -37,7 +37,8 @@ cron.schedule("*/5 * * * * *", () => {
   var dateTime = hours + ":" + minutes + ":" + seconds;
 
   mailList.forEach((mail) => {
-    if((mail.day == 2 && mail.mail == 0 && hoursampm == '12pm') || 
+    console.log(( hoursampm ))
+    if((mail.day == 2 && mail.mail == 0 && hoursampm == '18pm') || 
     (mail.day == 5 && mail.mail == 1 && hoursampm == '9am') || 
     (mail.day == 7 && mail.mail == 2 && hoursampm == '9am')) {
       var mailOptions = {
