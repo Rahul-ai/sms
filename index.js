@@ -20,25 +20,22 @@ let mailTrans = nodemailer.createTransport({
   }
 });
 
-cron.schedule("*/5 * * * * *", () => {
+cron.schedule("*/1 * * * * *", () => {
   var date_ob = new Date();
   var day = ("0" + date_ob.getDate()).slice(-2);
   var month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
   var year = date_ob.getFullYear();
-
   var date = year + "-" + month + "-" + day;
 
   var hours = date_ob.getHours();
-  var ampm = hours >= 12 ? 'pm' : 'am';
-  var hoursampm = date_ob.getHours() + ampm;
+  var hoursampm = hours > 12 ? date_ob.getHours()-12 + 'pm' : date_ob.getHours() + 'am';
   var minutes = date_ob.getMinutes();
   var seconds = date_ob.getSeconds();
-
   var dateTime = hours + ":" + minutes + ":" + seconds;
 
   mailList.forEach((mail) => {
     console.log(( hoursampm ))
-    if((mail.day == 2 && mail.mail == 0 && hoursampm == '18pm') || 
+    if((mail.day == 2 && mail.mail == 0 && hoursampm == '5pm') || 
     (mail.day == 5 && mail.mail == 1 && hoursampm == '9am') || 
     (mail.day == 7 && mail.mail == 2 && hoursampm == '9am')) {
       var mailOptions = {
