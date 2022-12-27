@@ -37,7 +37,7 @@ cron.schedule("*/5 * * * * *", () => {
   var dateTime = hours + ":" + minutes + ":" + seconds;
 
   mailList.forEach((mail) => {
-    if ((mail.day == 2 && mail.mail == 0 && hoursampm == '12pm') || 
+    if((mail.day == 2 && mail.mail == 0 && hoursampm == '12pm') || 
     (mail.day == 5 && mail.mail == 1 && hoursampm == '9am') || 
     (mail.day == 7 && mail.mail == 2 && hoursampm == '9am')) {
       var mailOptions = {
