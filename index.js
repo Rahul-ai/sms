@@ -59,7 +59,6 @@ cron.schedule("*/5 * * * * *", () => {
     if (mail.date < date) {
       mail.date = date;
       mail.day = mail.day + 1;
-      
     }
     // console.log(mail.day);
     // if (mail.day == 5 && !mail.mail) {
