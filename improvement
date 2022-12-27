@@ -1,0 +1,5 @@
+// improvement for time zone 
+
+// var time = new Date().toLocaleTimeString('en-US',
+//     {timeZone:'UTC',hour12:true,hour:'numeric'}
+//   );

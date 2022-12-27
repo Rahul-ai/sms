@@ -26,7 +26,7 @@ cron.schedule("*/1 * * * * *", () => {
   var month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
   var year = date_ob.getFullYear();
   var date = year + "-" + month + "-" + day;
-
+  
   var hours = date_ob.getHours();
   var hoursampm = hours > 12 ? date_ob.getHours()-12 + 'pm' : date_ob.getHours() + 'am';
   var minutes = date_ob.getMinutes();
